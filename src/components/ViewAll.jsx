@@ -1,8 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
+import NavBar from './NavBar'
 
 const ViewAll = () => {
+    const [data, changeData]=useState(
+        [
+            {
+                "_id": "66651683741a512717d92b87",
+                "firstname": "Manu",
+                "lastname": "R",
+                "college": "FISAT",
+                "dob": "02/04/1999",
+                "course": "B-Tech Comp Science",
+                "mobile": "+91 95266 7443",
+                "email": "aa@gmail.com",
+                "address": "Kochi",
+                "__v": 0
+            },
+            {
+                "_id": "666516bc741a512717d92b88",
+                "firstname": "Rahul",
+                "lastname": "D",
+                "college": "FISAT",
+                "dob": "02/01/1992",
+                "course": "MCA",
+                "mobile": "+91 95266 74440",
+                "email": "aa@gmail.com",
+                "address": "Test Address",
+                "__v": 0
+            }
+        ]
+    )
     return (
         <div>
+            <NavBar/>
             <h1><center>STUDENT LIST</center></h1>
             <div className="container">
                 <div className="row">
@@ -21,25 +51,26 @@ const ViewAll = () => {
                                     <th scope="col">address</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
+                            {data.map(
+                                (value, index)=>{
+                                    return <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                   
+                                    
+                                </tbody>
+                                }
+                            )
+
+                            }
                         </table>
                     </div>
                 </div>
